@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_check_box.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_circle_blue.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_circle_red.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_circle_yellow.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_note.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_photo.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/ic_add.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/ic_photo.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_blue.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_check_box.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_note.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_photo.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_red.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_yellow.xml" value="0.2703125" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/unchecked_circle_blue.xml" value="0.2703125" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/unchecked_circle_red.xml" value="0.2703125" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/unchecked_note.xml" value="0.2703125" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/unchecked_photo.xml" value="0.2703125" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_add_new_note.xml" value="0.24452554744525548" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_add_new_note1.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_note_check.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_note_check_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_note_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_note_details2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_note_photo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_note_photo_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/item_note.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/item_note_check.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/item_note_photo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
