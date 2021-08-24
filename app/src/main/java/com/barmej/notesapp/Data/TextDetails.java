@@ -1,15 +1,11 @@
 package com.barmej.notesapp.Data;
 
+import android.graphics.drawable.Drawable;
 import android.widget.EditText;
 
-public class TextDetails {
-    String editText;
+public class TextDetails extends DataFather {
 
-    public TextDetails(String editText) {
-        this.editText = editText;
-    }
-
-    public String getEditText() {
-        return editText;
+    public TextDetails(String editText, Drawable color) {
+        super(editText, color);
     }
 }

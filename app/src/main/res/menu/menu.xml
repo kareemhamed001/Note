@@ -2,14 +2,17 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Item"
+    <item android:title="List View"
         android:id="@+id/actoin_list"
         android:icon="@drawable/ic_baseline_view_list_24"
-        app:showAsAction="ifRoom"
-        android:visible="false"
+
         />
-    <item android:title="Item"
+    <item android:title="Grid View"
         android:id="@+id/actoin_grid"
-        android:icon="@drawable/ic_baseline_view_module_24"
-        app:showAsAction="ifRoom"/>
+        android:icon="@drawable/ic_baseline_view_module_24"/>
+
+    <item android:title="Agenda View"
+        android:id="@+id/actoin_staggered"
+        android:icon="@drawable/ic_baseline_view_agenda_24"/>
+
 </menu>

@@ -1,24 +1,14 @@
 package com.barmej.notesapp.Data;
 
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class PhotoText {
-    Uri imageView;
-    String editText;
+public class PhotoText extends DataFather {
 
-    public PhotoText(Uri imageView, String editText) {
-        this.imageView = imageView;
-        this.editText = editText;
-    }
-
-    public Uri getImageView() {
-        return imageView;
-    }
-
-    public String getEditText() {
-        return editText;
+    public PhotoText(Uri imageView, String editText, Drawable color) {
+        super(imageView, editText, color);
     }
 }

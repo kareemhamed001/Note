@@ -5,7 +5,7 @@
     <stroke
         android:width="2dp"
         android:color="@android:color/black" />
-    <solid android:color="@color/blue" />
+    <solid android:color="@color/White" />
     <size
         android:width="30dp"
         android:height="30dp" />

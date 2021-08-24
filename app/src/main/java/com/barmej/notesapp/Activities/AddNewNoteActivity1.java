@@ -11,11 +11,14 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.opengl.Visibility;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -28,23 +31,22 @@ import com.barmej.notesapp.R;
 
 public class AddNewNoteActivity1 extends AppCompatActivity {
     RadioGroup colorRadioGroub;
-
-
     CardView cardViewPhoto;
     CardView cardViewdetails;
     CardView cardViewcheck;
-
-
-    ConstraintLayout constraintLayout;
+    RadioButton noteStatue;
     ImageView imageView;
     EditText photoNoteEditText;
+    EditText checkNoteEditText;
+    EditText textViewdetails;
     RadioButton radioButton;
+    CheckBox checkNoteCheckBox;
     int ADD_PHOTO = 123;
     RadioGroup typeRadioGroub;
     Button submit;
-
     Uri mNewimage;
     int READ_PHOTO_FROM_GALLAREY = 180;
+    int colorcode = R.drawable.checked_circle_white;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +54,14 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_note);
         colorRadioGroub = findViewById(R.id.colorRadioGroup);
         typeRadioGroub = findViewById(R.id.typeRadioGroup);
+        cardViewPhoto = findViewById(R.id.cardViewPhoto);
+        cardViewdetails = findViewById(R.id.cardViewNote);
+        cardViewcheck = findViewById(R.id.cardViewCheckNote);
         photoNoteEditText = findViewById(R.id.photoNoteEditText);
-        constraintLayout=findViewById(R.id.constraintlayout);
-       cardViewPhoto=findViewById(R.id.cardViewPhoto);
-        cardViewdetails=findViewById(R.id.cardViewNote);
-        cardViewcheck=findViewById(R.id.cardViewCheckNote);
         imageView = findViewById(R.id.photoImageView);
+        checkNoteEditText = findViewById(R.id.checkNoteEditText);
+        checkNoteCheckBox = findViewById(R.id.checkNoteCheckBox);
+        textViewdetails = findViewById(R.id.noteEditText);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,12 +69,7 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
             }
         });
         submit = findViewById(R.id.button_submit);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                submitBt();
-            }
-        });
+
         colorRadioGroub.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -80,16 +79,22 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
                         cardViewPhoto.setBackgroundColor(Color.YELLOW);
                         cardViewdetails.setBackgroundColor(Color.YELLOW);
                         cardViewcheck.setBackgroundColor(Color.YELLOW);
+                        colorcode = R.drawable.checked_circle_yellow;
+                        System.out.println(colorcode);
                         break;
                     case R.id.radioButton2:
                         cardViewPhoto.setBackgroundColor(Color.RED);
                         cardViewcheck.setBackgroundColor(Color.RED);
                         cardViewdetails.setBackgroundColor(Color.RED);
+                        colorcode = R.drawable.checked_circle_red;
+                        System.out.println(colorcode);
                         break;
                     case R.id.radioButton3:
-                        cardViewcheck.setBackgroundColor(Color.WHITE);
-                        cardViewdetails.setBackgroundColor(Color.WHITE);
-                        cardViewPhoto.setBackgroundColor(Color.WHITE);
+                        cardViewcheck.setBackgroundResource(R.color.blue);
+                        cardViewdetails.setBackgroundResource(R.color.blue);
+                        cardViewPhoto.setBackgroundResource(R.color.blue);
+                        colorcode = R.drawable.checked_circle_blue;
+                        System.out.println(colorcode);
                         break;
                 }
             }
@@ -104,6 +109,12 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
                         cardViewPhoto.setVisibility(CardView.VISIBLE);
                         cardViewcheck.setVisibility(CardView.INVISIBLE);
                         cardViewdetails.setVisibility(CardView.INVISIBLE);
+                        submit.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                submitBt();
+                            }
+                        });
                         break;
                     case R.id.radioButton5:
 
@@ -111,11 +122,23 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
                         cardViewPhoto.setVisibility(CardView.INVISIBLE);
                         cardViewdetails.setVisibility(CardView.INVISIBLE);
 
+                        submit.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                submitBt1();
+                            }
+                        });
                         break;
                     case R.id.radioButton6:
                         cardViewdetails.setVisibility(CardView.VISIBLE);
                         cardViewcheck.setVisibility(CardView.INVISIBLE);
                         cardViewPhoto.setVisibility(CardView.INVISIBLE);
+                        submit.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                submitBt2();
+                            }
+                        });
                         break;
                 }
             }
@@ -181,12 +204,14 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
 
 
     public void submitBt() {
-        if (mNewimage != null ) {
+        String mNewtext = photoNoteEditText.getText().toString();
 
-            String mNewtext = photoNoteEditText.getText().toString();
+        if (mNewimage != null || mNewtext != null) {
             Intent intent = new Intent();
             intent.putExtra(Constants.extra_photo_uri, mNewimage);
             intent.putExtra(Constants.extra_text, mNewtext);
+
+            intent.putExtra(Constants.note_color, colorcode);
             setResult(RESULT_OK, intent);
             finish();
 
@@ -194,4 +219,35 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
             Toast.makeText(this, R.string.select_picture, Toast.LENGTH_LONG).show();
         }
     }
+
+    public void submitBt1() {
+        String mNewtext = checkNoteEditText.getText().toString();
+        Boolean mNewCheck = checkNoteCheckBox.isChecked();
+        if (!mNewtext.isEmpty()) {
+            Intent intent = new Intent();
+            intent.putExtra(Constants.extra_text_check, mNewtext);
+            intent.putExtra(Constants.extra_bolean_check, mNewCheck);
+            intent.putExtra(Constants.note_color, colorcode);
+            setResult(Constants.ADD_CHEKABLE, intent);
+            finish();
+
+        } else {
+            Toast.makeText(this, "ادخل نص", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void submitBt2() {
+        String mNewtext = textViewdetails.getText().toString();
+        if (!mNewtext.isEmpty()) {
+            Intent intent = new Intent();
+            intent.putExtra(Constants.extra_text_details, mNewtext);
+            intent.putExtra(Constants.note_color, colorcode);
+            setResult(Constants.ADD_DETAILS, intent);
+            finish();
+
+        } else {
+            Toast.makeText(this, "ادخل نص", Toast.LENGTH_LONG).show();
+        }
+    }
+
 }

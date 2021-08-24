@@ -6,10 +6,12 @@
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_check_box.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_circle_blue.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_circle_red.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_circle_white.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_circle_yellow.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_note.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/checked_photo.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/ic_add.xml" value="0.17222222222222222" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/ic_baseline_view_agenda_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/ic_photo.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_blue.xml" value="0.17222222222222222" />
@@ -18,6 +20,7 @@
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_photo.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_red.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/radio_button_yellow.xml" value="0.2703125" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/rounded_edges.xml" value="0.1875" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/unchecked_circle_blue.xml" value="0.2703125" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/unchecked_circle_red.xml" value="0.2703125" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/drawable/unchecked_note.xml" value="0.2703125" />
@@ -31,9 +34,9 @@
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_note_details2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_note_photo.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/activity_note_photo_details.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/item_note.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/item_note.xml" value="0.24621212121212122" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/item_note_check.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/item_note_photo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/layout/item_note_photo.xml" value="0.24621212121212122" />
         <entry key="..\:/Users/khidm/Downloads/note/android-degree-studentproject-adapterviews-base-master/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
       </map>
     </option>

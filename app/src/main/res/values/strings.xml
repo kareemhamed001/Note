@@ -5,5 +5,8 @@
     <string name="add_note_text">أضف ملاحظة</string>
     <string name="Read_permition_needed_access_files">صلاحيه الوصول الي الملفات مطلوبه لقرائه الصور والاصوات من جهازك</string>
     <string name="select_picture">اختر صوره</string>
+    <string name="delete_item_confirmation">هل تريد حذف العنصر؟</string>
+    <string name="Confrim_delete">نعم</string>
+    <string name="cancel_delete">لا</string>
 
 </resources>

@@ -1,23 +1,13 @@
 package com.barmej.notesapp.Data;
 
+import android.graphics.drawable.Drawable;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class TextCheck {
-    EditText editText;
-    CheckBox checkBox;
+public class TextCheck extends DataFather {
 
-    public TextCheck(EditText editText, CheckBox checkBox) {
-        this.editText = editText;
-        this.checkBox = checkBox;
-    }
-
-    public EditText getEditText() {
-        return editText;
-    }
-
-    public CheckBox getCheckBox() {
-        return checkBox;
+    public TextCheck(String editText, Boolean checkBox, Drawable color) {
+        super(editText, checkBox, color);
     }
 }

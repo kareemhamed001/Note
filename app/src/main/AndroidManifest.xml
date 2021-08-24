@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activities.NoteDetailsActivity"
+            android:name=".Activities.TextDetailsActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.NoteCheckActivity"
+            android:name=".Activities.CheckDetailsActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.NotePhotoActivity"
+            android:name=".Activities.photoDetails"
             android:exported="true" />
         <activity
             android:name=".Activities.AddNewNoteActivity1"
