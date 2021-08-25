@@ -17,7 +17,7 @@ public class Constants {
     public static final String check_check_edit = "check_check_edit";
     public static final String details_note_edit = "details_note_edit";
     public static final int photo_activity_result = 303;
-    public static final int check_result = 303;
+    public static final int check_result = 350;
     public static final int details_result = 304;
     public static final int ADD_CHEKABLE = 200;
     public static final int ADD_DETAILS = 300;

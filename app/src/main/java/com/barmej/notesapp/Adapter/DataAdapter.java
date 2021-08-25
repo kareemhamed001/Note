@@ -8,10 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.barmej.notesapp.Data.DataFather;
@@ -68,7 +70,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
 
         switch (holder.getItemViewType()) {
@@ -77,22 +79,24 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 photoAdapterViewHolder photoAdapterViewHolder = (photoAdapterViewHolder) holder;
                 photoAdapterViewHolder.imageView.setImageURI(dataFather.getImageView());
                 photoAdapterViewHolder.textView.setText(dataFather.getEditText());
-                photoAdapterViewHolder.imageView2.setBackground(dataFather.getColor());
+
+                photoAdapterViewHolder.layout.setBackground(dataFather.getColor());
+
                 photoAdapterViewHolder.position = position;
                 break;
             case TEXT_CHECK:
                 DataFather dataFather1 = dataFathers.get(position);
                 DataAdapter.textCheckViewHolder textCheckViewHolder = (textCheckViewHolder) holder;
                 textCheckViewHolder.textView.setText(dataFather1.getEditText());
+                textCheckViewHolder.layout.setBackground(dataFather1.getColor());
                 textCheckViewHolder.checkBox.setChecked(dataFather1.getCheckBox());
-                textCheckViewHolder.imageView.setBackground(dataFather1.getColor());
                 textCheckViewHolder.position = position;
                 break;
             case TEXT_DETAILS:
                 DataFather dataFather2 = dataFathers.get(position);
                 textDetailsViewHolder textDetailsViewHolder = (textDetailsViewHolder) holder;
                 textDetailsViewHolder.textView.setText(dataFather2.getEditText());
-                textDetailsViewHolder.imageView1.setBackground(dataFather2.getColor());
+                textDetailsViewHolder.layout.setBackground(dataFather2.getColor());
                 textDetailsViewHolder.position = position;
                 break;
 
@@ -109,6 +113,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     final class photoAdapterViewHolder extends RecyclerView.ViewHolder {
 
 
+        LinearLayoutCompat layout;
         ImageView imageView;
         ImageView imageView2;
         TextView textView;
@@ -120,6 +125,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             imageView = itemView.findViewById(R.id.imageView);
             textView = itemView.findViewById(R.id.textView);
             imageView2 = itemView.findViewById(R.id.imageViewPhoto);
+            layout=itemView.findViewById(R.id.linearPhoto);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -137,7 +143,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     final class textCheckViewHolder extends RecyclerView.ViewHolder {
-
+        LinearLayoutCompat layout;
         TextView textView;
         CheckBox checkBox;
         ImageView imageView;
@@ -148,6 +154,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             textView = itemView.findViewById(R.id.textViewchck);
             checkBox = itemView.findViewById(R.id.checkBoxCheck);
             imageView = itemView.findViewById(R.id.statueCheck);
+            layout=itemView.findViewById(R.id.linearcheck);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -166,6 +173,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     final class textDetailsViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+        LinearLayoutCompat layout;
         ImageView imageView1;
         int position;
 
@@ -173,6 +181,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemView);
             textView = itemView.findViewById(R.id.textViewchck);
             imageView1 = itemView.findViewById(R.id.imageViewDetails);
+            layout=itemView.findViewById(R.id.lineardetails);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

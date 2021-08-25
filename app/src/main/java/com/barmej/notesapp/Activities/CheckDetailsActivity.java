@@ -43,11 +43,10 @@ public class CheckDetailsActivity extends AppCompatActivity {
         String text1 = editText.getText().toString();
         Boolean ck = checkBox.isChecked();
         Intent intent = new Intent();
-        intent.putExtra(Constants.check_check_result, ck);
         intent.putExtra(Constants.check_edit_result, text1);
+        intent.putExtra(Constants.check_check_result, ck);
         setResult(Constants.check_result, intent);
         finish();
-
-
+        finishAndRemoveTask();
     }
 }

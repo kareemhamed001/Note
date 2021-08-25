@@ -43,16 +43,13 @@ public class MainActivity extends AppCompatActivity {
     private androidx.recyclerview.widget.StaggeredGridLayoutManager mstaggered;
     private ArrayList<DataFather> mItems;
     private DataAdapter mAdapter;
-    int position1;
-    int position2;
-    int ADD_PHOTO = 123;
+    int position1 = 0;
     private Menu mmenu;
     int ACTIVITY_CODE;
     final static int EDIT_PHOTO_NOTE = 301;
     Drawable color_code;
     Drawable color_code1;
     Drawable color_code2;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,14 +61,15 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new DataAdapter(mItems, new ItemOnLongClick() {
             @Override
             public void onItemClick(int position) {
-                position1 = position;
+                setPosition(position);
                 deleteItem(position);
+
 
             }
         }, new ItemOnClickListener() {
             @Override
             public void onItemClicked(int position) {
-                position2 = position;
+                setPosition(position);
                 openNote(position);
             }
         });
@@ -117,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 color_code = drawable;
                 PhotoText photoText = new PhotoText(pictureUri, textDetails, drawable);
                 addItem(photoText);
-                ACTIVITY_CODE = 5;
+                ACTIVITY_CODE = RESULT_OK;
             } else if (resultCode == Constants.ADD_DETAILS) {
                 ACTIVITY_CODE = Constants.ADD_DETAILS;
                 String mnewtxt = data.getStringExtra(Constants.extra_text_details);
@@ -140,10 +138,9 @@ public class MainActivity extends AppCompatActivity {
         } else if (resultCode == Constants.check_result) {
             String textDetails1 = data.getStringExtra(Constants.check_edit_result);
             Boolean check = data.getBooleanExtra(Constants.check_check_result, false);
-
             TextCheck textCheck = new TextCheck(textDetails1, check, color_code1);
             replaceItemCheck(textCheck);
-        } else if (resultCode == details_result) {
+        } else if (resultCode == Constants.details_result) {
             String textDetails1 = data.getStringExtra(Constants.check_edit_result);
 
             TextDetails textDetails = new TextDetails(textDetails1, color_code2);
@@ -151,44 +148,64 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void setPosition(int position) {
+        position1 = position;
+    }
+
     private void addItem(PhotoText photoText) {
         mItems.add(photoText);
-        mAdapter.notifyItemInserted(mItems.size() - 1);
-    }
-
-    private void replaceItemPhoto(PhotoText photoText) {
-        mItems.add(photoText);
-        mAdapter.notifyItemInserted(mItems.size());
-        DeleteAfterAdd(position2);
-    }
-
-    private void replaceItemCheck(TextCheck textCheck) {
-        mItems.add(textCheck);
-        mAdapter.notifyItemInserted(mItems.size());
-        DeleteAfterAdd(position2);
-    }
-
-    private void replaceItemDetails(TextDetails textDetails) {
-        mItems.add(textDetails);
-        mAdapter.notifyItemInserted(mItems.size());
-        DeleteAfterAdd(position2);
-    }
-
-    private void DeleteAfterAdd(int position) {
-        mItems.remove(position);
-        mAdapter.notifyItemRemoved(position);
-        position2 = position;
+        mAdapter.notifyItemInserted(mItems.size() + 1);
     }
 
     private void addItemCheck(TextCheck textCheck) {
         mItems.add(textCheck);
-        mAdapter.notifyItemInserted(mItems.size() - 1);
+        mAdapter.notifyItemInserted(mItems.size() + 1);
     }
 
     public void addItemDetails(TextDetails textDetails) {
         mItems.add(textDetails);
-        mAdapter.notifyItemInserted(mItems.size() - 1);
+        mAdapter.notifyItemInserted(mItems.size() + 1);
     }
+
+    private void replaceItemPhoto(PhotoText photoText) {
+        mItems.set(position1, photoText);
+        mAdapter.notifyItemChanged(position1);
+
+    }
+
+    private void replaceItemCheck(TextCheck textCheck) {
+        mItems.set(position1, textCheck);
+        mAdapter.notifyItemChanged(position1);
+
+    }
+
+    private void replaceItemDetails(TextDetails textDetails) {
+        mItems.set(position1, textDetails);
+        mAdapter.notifyItemChanged(position1);
+
+    }
+
+    private void deleteItem(final int position) {
+        AlertDialog alertDialog =
+                new AlertDialog.Builder(this).setMessage(R.string.delete_item_confirmation).setPositiveButton(R.string.Confrim_delete, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (position <= mItems.size()) {
+                            mItems.remove(position);
+                            mAdapter.notifyItemRemoved(position);
+                            mAdapter.notifyItemRangeChanged(position, mItems.size());
+                        }
+                    }
+                }).setNegativeButton(R.string.cancel_delete, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                }).create();
+        alertDialog.show();
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -214,60 +231,29 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void deleteItem(final int position) {
-        AlertDialog alertDialog =
-                new AlertDialog.Builder(this).setMessage(R.string.delete_item_confirmation).setPositiveButton(R.string.Confrim_delete, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        mItems.remove(position);
-                        mAdapter.notifyItemRemoved(position + 1);
-                    }
-                }).setNegativeButton(R.string.cancel_delete, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                }).create();
-        alertDialog.show();
-
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt("position", position2);
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        int position = savedInstanceState.getInt("position");
-        position1 = position;
-    }
 
     public void openNote(int position) {
         DataFather dataFather = mItems.get(position);
-        switch (ACTIVITY_CODE) {
 
-            case 5:
-                Intent intent = new Intent(MainActivity.this, photoDetails.class);
-                intent.putExtra(Constants.photo_edit, dataFather.getImageView());
-                intent.putExtra(Constants.photo_text_edit, dataFather.getEditText());
-                startActivityForResult(intent, Constants.photo_activity_result);
-                break;
-            case Constants.ADD_CHEKABLE:
-                Intent intent1 = new Intent(MainActivity.this, CheckDetailsActivity.class);
-                intent1.putExtra(Constants.check_text_edit, dataFather.getEditText());
-                intent1.putExtra(Constants.check_check_edit, dataFather.getCheckBox());
-                startActivityForResult(intent1, Constants.check_result);
-                break;
-            case Constants.ADD_DETAILS:
-                Intent intent2 = new Intent(MainActivity.this, TextDetailsActivity.class);
-                intent2.putExtra(Constants.details_note_edit, dataFather.getEditText());
-                startActivityForResult(intent2, details_result);
-                break;
+        if (mItems.get(position) instanceof PhotoText) {
+            Intent intent = new Intent(MainActivity.this, photoDetails.class);
+            intent.putExtra(Constants.photo_edit, dataFather.getImageView());
+            intent.putExtra(Constants.photo_text_edit, dataFather.getEditText());
+            startActivityForResult(intent, Constants.photo_activity_result);
+        }
+
+        if (mItems.get(position) instanceof TextCheck) {
+            Intent intent1 = new Intent(MainActivity.this, CheckDetailsActivity.class);
+            intent1.putExtra(Constants.check_text_edit, dataFather.getEditText());
+            intent1.putExtra(Constants.check_check_edit, dataFather.getCheckBox());
+            startActivityForResult(intent1, Constants.check_result);
+        }
+        if (mItems.get(position) instanceof TextDetails) {
+            Intent intent2 = new Intent(MainActivity.this, TextDetailsActivity.class);
+            intent2.putExtra(Constants.details_note_edit, dataFather.getEditText());
+            startActivityForResult(intent2, Constants.details_result);
         }
     }
+
 
 }

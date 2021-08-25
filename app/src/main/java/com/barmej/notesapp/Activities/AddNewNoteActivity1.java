@@ -46,7 +46,7 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
     Button submit;
     Uri mNewimage;
     int READ_PHOTO_FROM_GALLAREY = 180;
-    int colorcode = R.drawable.checked_circle_white;
+    int colorcode = R.drawable.rounded_edges_white;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,24 +76,18 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
                 radioButton = findViewById(i);
                 switch (radioButton.getId()) {
                     case R.id.radioButton:
-                        cardViewPhoto.setBackgroundColor(Color.YELLOW);
-                        cardViewdetails.setBackgroundColor(Color.YELLOW);
-                        cardViewcheck.setBackgroundColor(Color.YELLOW);
-                        colorcode = R.drawable.checked_circle_yellow;
+
+                        colorcode = R.drawable.rounded_edgesyellow;
                         System.out.println(colorcode);
                         break;
                     case R.id.radioButton2:
-                        cardViewPhoto.setBackgroundColor(Color.RED);
-                        cardViewcheck.setBackgroundColor(Color.RED);
-                        cardViewdetails.setBackgroundColor(Color.RED);
-                        colorcode = R.drawable.checked_circle_red;
+
+                        colorcode = R.drawable.rounded_edges_red;
                         System.out.println(colorcode);
                         break;
                     case R.id.radioButton3:
-                        cardViewcheck.setBackgroundResource(R.color.blue);
-                        cardViewdetails.setBackgroundResource(R.color.blue);
-                        cardViewPhoto.setBackgroundResource(R.color.blue);
-                        colorcode = R.drawable.checked_circle_blue;
+
+                        colorcode = R.drawable.rounded_edges_blue;
                         System.out.println(colorcode);
                         break;
                 }
@@ -206,7 +200,7 @@ public class AddNewNoteActivity1 extends AppCompatActivity {
     public void submitBt() {
         String mNewtext = photoNoteEditText.getText().toString();
 
-        if (mNewimage != null || mNewtext != null) {
+        if (mNewimage != null && !mNewtext.isEmpty()) {
             Intent intent = new Intent();
             intent.putExtra(Constants.extra_photo_uri, mNewimage);
             intent.putExtra(Constants.extra_text, mNewtext);

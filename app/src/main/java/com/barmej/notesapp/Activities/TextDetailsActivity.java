@@ -38,6 +38,7 @@ public class TextDetailsActivity extends AppCompatActivity {
         intent.putExtra(Constants.check_edit_result, text1);
         setResult(Constants.details_result, intent);
         finish();
+        finishAndRemoveTask();
 
     }
 }
